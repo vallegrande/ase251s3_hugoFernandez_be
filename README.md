@@ -1,42 +1,74 @@
-Proyecto: Endpoint Hola Mundo – Spring Boot
+🚀 Proyecto: Endpoint “Hola Mundo” con Spring Boot
+📌 Descripción
 
-1️⃣ Creación del proyecto
+En esta actividad se implementó un endpoint de tipo GET utilizando el framework Spring Boot, el cual muestra el mensaje “Hola Mundo” en el navegador.
 
-Se creó el proyecto utilizando Spring Initializr con las siguientes características:
+🛠 Tecnologías utilizadas
+
+Java 17
+
+Spring Boot
+
+Maven
+
+Spring Web
+
+IDE (IntelliJ IDEA / VS Code)
+
+Git y GitHub
+
+🧱 1️⃣ Creación del Proyecto
+
+El proyecto fue creado utilizando Spring Initializr con las siguientes características:
 
 Project: Maven
 
 Language: Java
 
-Spring Boot: última versión estable
+Spring Boot: Última versión estable
+
+Packaging: Jar
 
 Java: 17
 
-Dependencia: Spring Web
+Dependencia agregada: Spring Web
 
-2️⃣ Implementación del endpoint
+Una vez descargado el proyecto, se abrió en el IDE y se esperó a que Maven descargara las dependencias necesarias.
 
-Se creó la clase HolaController con la anotación @RestController.
+💻 2️⃣ Implementación del Endpoint
 
-Se implementó un endpoint GET:
+Se utilizó la clase principal generada automáticamente por Spring Boot y se agregó la anotación @RestController para permitir la creación de un endpoint REST.
 
-@GetMapping("/hola")
-public String hola() {
-    return "Hola Mundo!";
+Código implementado:
+package vallegrande.edu.pe.demo;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+@SpringBootApplication
+@RestController
+public class HugoFernandezApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(HugoFernandezApplication.class, args);
+    }
+
+    @GetMapping("/Hola")
+    public String hello(@RequestParam(value = "name", defaultValue = "Mundo") String name) {
+        return String.format("Hola %s!", name);
+    }
+
 }
+🌐 3️⃣ Prueba del Endpoint
 
-3️⃣ Ejecución
+Una vez ejecutada la aplicación, el servidor se inició en el puerto 8080.
 
-Para ejecutar el proyecto:
+Acceso básico:
+http://localhost:8080/Hola
 
-Abrir en IntelliJ o VS Code
-
-Ejecutar la clase principal
-
-Acceder en el navegador:
-
-http://localhost:8080/hola
-
-Resultado mostrado:
+Resultado:
 
 Hola Mundo!
