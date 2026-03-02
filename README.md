@@ -1,4 +1,5 @@
 Proyecto: Endpoint Hola Mundo – Spring Boot
+
 1️⃣ Creación del proyecto
 
 Se creó el proyecto utilizando Spring Initializr con las siguientes características:
@@ -23,6 +24,7 @@ Se implementó un endpoint GET:
 public String hola() {
     return "Hola Mundo!";
 }
+
 3️⃣ Ejecución
 
 Para ejecutar el proyecto:
